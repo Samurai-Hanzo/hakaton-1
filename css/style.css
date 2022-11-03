@@ -1,0 +1,847 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Jost:wght@200&family=Manrope:wght@300;400;500;600;700;800&display=swap");
+
+body {
+  margin: 0 auto;
+  font-family: "Inconsolata", monospace;
+  font-family: "Jost", sans-serif;
+  font-family: "Manrope", sans-serif;
+  background: black;
+}
+:root {
+  --index: calc(1vw + 1vh);
+}
+img {
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* BURGER */
+
+.menu-btn {
+  display: none;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+
+.menu-btn span {
+  width: 30px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  transition: all 0.5s;
+}
+
+.menu-btn span:nth-of-type(2) {
+  top: calc(50% - 5px);
+}
+.menu-btn span:nth-of-type(3) {
+  top: calc(50% + 5px);
+}
+
+.menu-btn.active span:nth-of-type(1) {
+  display: none;
+}
+.menu-btn.active span:nth-of-type(2) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(45deg);
+}
+.menu-btn.active span:nth-of-type(3) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(-45deg);
+}
+
+/* HEADER */
+
+.header {
+  max-width: 1440px;
+  height: 885px;
+  display: flex;
+  flex-direction: column;
+  background: url(../images/header-backgruond-2.png) center no-repeat;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  max-width: 1920px;
+}
+.ulnav {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-left: 170px;
+  width: 300px;
+}
+.nav-item {
+  margin: 0 10px;
+}
+.nav-item-title {
+  width: 150px;
+  position: relative;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: white;
+}
+.nav-item-title:hover {
+  cursor: pointer;
+}
+.nav-item-title:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  content: "";
+  transition: 0.5s ease-out;
+}
+.nav-item-title:hover:after,
+.nav-item-title:focus:after {
+  width: 100%;
+}
+
+.logo {
+  margin-top: 30px;
+  margin-left: 50px;
+  width: 86px;
+  height: 45px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 125.02%;
+  letter-spacing: -0.04em;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+.container {
+  max-width: 1280px;
+}
+.description {
+  margin-left: 100px;
+  margin-top: 100px;
+}
+.hi {
+  width: 180px;
+  padding: 5px 10px;
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 126.02%;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(236, 236, 236, 0.17);
+}
+.chris {
+  max-width: 755px;
+  height: 160px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 800;
+  line-height: 111.02%;
+  text-transform: capitalize;
+  color: #ffffff;
+  margin-top: 40px;
+
+  font-size: calc(var(--index) / 0.3);
+  letter-spacing: calc(var(--index) / 3.5);
+}
+.me {
+  max-width: 720px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 198.02%;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+.header-button {
+  margin-top: 30px;
+}
+.button {
+  text-decoration: none;
+  padding: 20px 30px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 234.52%;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: white;
+  border: 1px solid white;
+}
+.button:hover {
+  background: white;
+  color: black;
+  transition: 0.5s;
+}
+
+/* SECTION_2 */
+
+.section-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header-section-2 {
+  position: relative;
+  margin-top: 30px;
+  margin-left: 100px;
+  width: 320px;
+  height: 180px;
+}
+.about {
+  font-family: "Jost";
+  font-size: 120px;
+  line-height: 0;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #464646;
+}
+.about-me {
+  padding: 3px 9px;
+  position: absolute;
+  top: 79px;
+  left: 110px;
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 126.02%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  background: black;
+  border: 2px solid #464646;
+}
+.block-2__section-2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.block-2__title-2 {
+  max-width: 500px;
+  margin-right: 20px;
+}
+.block-2__title-1 {
+  max-width: 640px;
+}
+.block-2__text {
+  margin-left: 20px;
+  margin-bottom: 40px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 237.52%;
+  letter-spacing: 0.02em;
+  color: #c5c5c5;
+}
+.block-2__link a {
+  margin-left: 20px;
+  text-decoration: none;
+  padding: 15px 40px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 234.52%;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: white;
+  background: black;
+  border: 1px solid white;
+}
+.block-2__link a:hover {
+  background: white;
+  color: black;
+  border: 1px solid white;
+  transition: 0.5s;
+}
+.progress-bar {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+.progress {
+  position: relative;
+  margin-bottom: 34px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c5c5c5;
+  border-bottom: 1px solid rgb(88, 88, 88);
+}
+.progress:hover {
+  cursor: pointer;
+}
+.progress:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  content: "";
+  transition: 0.5s ease-out;
+}
+.progress:hover:after,
+.progress:focus:after {
+  width: 100%;
+}
+
+/* SECTION-3 */
+
+.section-3 {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.header-section-3 {
+  position: relative;
+}
+.portfolio {
+  margin: 0 auto;
+  max-width: 560px;
+  height: 180px;
+  font-family: "Jost";
+  font-size: 120px;
+  line-height: 150.02%;
+  text-align: center;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #464646;
+
+  font-size: calc(var(--index) / 0.17);
+  letter-spacing: calc(var(--index) / 3.5);
+}
+.works {
+  position: absolute;
+  top: 32%;
+  left: 44%;
+  padding: 3px 9px;
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 126.02%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  background: black;
+  border: 2px solid #464646;
+
+  font-size: calc(var(--index) / 1.2);
+  letter-spacing: calc(var(--index) / 3.5);
+}
+.works-images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.works-images-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 50px 20px 20px 20px;
+}
+.image-text-title {
+  max-width: 60%;
+}
+.image-text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 27px;
+  text-align: right;
+  text-transform: lowercase;
+  color: #c5c5c5;
+  border-bottom: 1px solid #7e7e7e;
+}
+.images-block {
+  max-width: 555px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.image-block-title {
+  overflow: hidden;
+}
+.image-block-title img {
+  transition: 1s;
+}
+.image-block-title img:hover {
+  transform: scale(1.2);
+}
+.portfolio-btn {
+  align-self: flex-start;
+  margin-top: 40px;
+}
+.port-btn {
+  padding: 10px 30px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 234.52%;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  background: black;
+  border: 1px solid white;
+}
+.port-btn:hover {
+  color: black;
+  background: white;
+  transition: 0.5s;
+}
+
+/* SECTION-4 */
+
+.section-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.quote {
+  margin: 30px 30px 0 30px;
+  max-width: 972px;
+  font-family: "Jost";
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  color: #eaeaea;
+
+  font-size: calc(var(--index) / 0.3);
+  letter-spacing: calc(var(--index) / 3.5);
+}
+.citate {
+  max-width: 743px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+
+  font-size: calc(var(--index) / 0.5);
+  letter-spacing: calc(var(--index) / 3.5);
+}
+.autor {
+  width: 163px;
+  height: 32px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 180%;
+  color: #999999;
+}
+.imggg {
+  margin-bottom: 30px;
+}
+
+/* SECTION-5 */
+
+.section-5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 120px;
+  max-width: 100%;
+}
+.header-section-5 {
+  position: relative;
+}
+.achievment {
+  margin: 0 auto;
+  font-family: "Jost";
+  line-height: 150.02%;
+  text-align: center;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #464646;
+
+  font-size: calc(var(--index) / 0.13);
+  letter-spacing: calc(var(--index) / 3.5);
+}
+.awards {
+  position: absolute;
+  top: 25%;
+  left: 27%;
+  padding: 3px 9px;
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 126.02%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  background: black;
+  border: 2px solid #464646;
+
+  font-size: calc(var(--index) / 0.7);
+  letter-spacing: calc(var(--index) / 3.5);
+}
+.design {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.design-title {
+  margin: 10px;
+  max-width: 340px;
+  height: 140px;
+  border-bottom: #464646 1px solid;
+}
+.design-head {
+  width: 152px;
+  height: 10px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 30px;
+  text-transform: capitalize;
+  color: white;
+}
+.design-text {
+  max-width: 334px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 188.02%;
+  letter-spacing: 0.02em;
+  color: #cecece;
+}
+
+/* SECTION-6 */
+
+.section-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  margin-top: 120px;
+}
+.header-section-6 {
+  position: relative;
+}
+.blogs {
+  margin: 0 auto;
+  font-family: "Jost";
+  font-size: 120px;
+  line-height: 150.02%;
+  text-align: center;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #464646;
+}
+.news {
+  position: absolute;
+  top: 25%;
+  left: 27%;
+  padding: 3px 9px;
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 126.02%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  background: black;
+  border: 2px solid #464646;
+}
+.latest-news {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 150px;
+}
+.news-title-1 {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  max-width: 366px;
+  height: 477px;
+  background: url(../images/bg-news-1.png) center no-repeat;
+}
+.news-title-2 {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  max-width: 366px;
+  height: 477px;
+  background: url(../images/bg-news-2.png) center no-repeat;
+}
+
+.news-title-3 {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  max-width: 366px;
+  height: 477px;
+  background: url(../images/bg-news-3.png) center no-repeat;
+}
+.date {
+  margin-left: 15px;
+  width: 236px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  color: #fcfcfc;
+}
+.news-text {
+  margin-left: 15px;
+  max-width: 299px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 160%;
+  letter-spacing: 0.01em;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+/* SECTION-7 */
+
+.section-7 {
+  max-width: 100%;
+}
+.autor {
+}
+.contact-blocks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.block-1 {
+  max-width: 305px;
+}
+.block-text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 225.02%;
+  letter-spacing: 0.02em;
+  color: #b8b8b8;
+}
+.input-block {
+  max-width: 304px;
+  height: 50px;
+}
+.input-title {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 23px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #575757;
+  background: #ffffff;
+  border: none;
+  padding: 13px 80px 13px 22px;
+  margin-bottom: 20px;
+}
+.button-mail {
+  margin-top: 30px;
+}
+.button-mail-title {
+  text-decoration: none;
+  padding: 11px 82px 11px 82px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 234.52%;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: white;
+  border: 1px solid white;
+}
+.button-mail-title:hover {
+  background: white;
+  color: black;
+  transition: 0.5s;
+}
+.ul-cont {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cont-item {
+  margin: 10px;
+}
+.cont-item-title {
+  max-width: 150px;
+  position: relative;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: white;
+}
+.cont-item-title:hover {
+  cursor: pointer;
+}
+.cont-item-title:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  content: "";
+  transition: 0.5s ease-out;
+}
+.cont-item-title:hover:after,
+.cont-item-title:focus:after {
+  max-width: 100%;
+}
+.block-text-cont {
+  max-width: 412px;
+  height: 69px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 225.02%;
+  letter-spacing: 0.02em;
+  color: white;
+}
+.email {
+  max-width: 323px;
+  height: 55px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 183.02%;
+  letter-spacing: 0.01em;
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+/* FOOTER */
+
+.footer {
+  max-width: 100%;
+  max-height: 400px;
+  background: #000;
+}
+.logos {
+  max-width: 360px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 73px;
+}
+.logo-title {
+  max-width: 24px;
+  max-height: 20px;
+}
+.copyright-title {
+  max-width: 339px;
+  height: 36px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 212.4%;
+  letter-spacing: 0.02em;
+  color: #8c8c8c;
+}
+
+@media (max-width: 775px) {
+  .menu-btn {
+    display: block;
+  }
+  .ulnav {
+    display: none;
+  }
+}
+@media (max-width: 635px) {
+  .achievment {
+    font-size: calc(var(--index) / 0.17);
+    letter-spacing: calc(var(--index) / 3.5);
+  }
+  .awards {
+    font-size: calc(var(--index) / 1);
+    letter-spacing: calc(var(--index) / 3.5);
+  }
+}
+@media (max-width: 565px) {
+  .portfolio {
+    top: 15%;
+    left: 36%;
+    font-size: calc(var(--index) / 0.17);
+    letter-spacing: calc(var(--index) / 3.5);
+  }
+  .works {
+    font-size: calc(var(--index) / 1);
+    letter-spacing: calc(var(--index) / 3.5);
+  }
+}
+@media (max-width: 450px) {
+  .about {
+    font-size: calc(var(--index) / 0.17);
+    letter-spacing: calc(var(--index) / 3.5);
+  }
+  .about-me {
+    font-size: calc(var(--index) / 1);
+    letter-spacing: calc(var(--index) / 3.5);
+  }
+}
